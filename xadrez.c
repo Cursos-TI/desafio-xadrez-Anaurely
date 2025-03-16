@@ -8,27 +8,53 @@ int main() {
     int torre;
     int bispo;
     int rainha;
-       
-
-   
-    printf("##Bem-vindo ao jogo xadrez!##\n");
+    char opcao; 
     
 
-    for(torre = 0;torre < 3; torre++) {//A Estrutura for foi aplicada na peça Torre.  
-        printf("Torre - Direita\n");
+    printf("##Bem-vindo ao jogo xadrez!##\n");
+
+    printf("T = torre\n");
+    printf("B = bispo\n");
+    printf("R = rainha\n");
+
+    printf("Escolha sua peça (T/B/R): \n");
+    scanf(" %c", &opcao); //Ler um caractere
+
+    switch (opcao) {
+        case 'B':
+        case 'b':
+            printf("Você escolheu o bispo\n");
+            for (bispo = 1; bispo <= 3; bispo++) {
+                printf("Bispo %d Cima_direita\n", bispo);
+            }
+            break;
+
+        case 'T':
+        case 't':
+            printf("Você escolheu a torre\n");
+            torre = 1; // Inicializando a variável torre
+            while (torre <= 3) {
+                printf("Torre %d Esquerda\n", torre);
+                torre++;
+            }
+            break;
+
+        case 'R':
+        case 'r':
+            printf("Você escolheu a rainha\n");
+            rainha = 1;
+            do
+            {printf("Rainha %d Direita\n", rainha);
+            rainha++;
+            } while (rainha <= 3);
+            
+            
+            break;
+
+        default:
+            printf("Opção inválida\n");
+            break;
     }
 
-    
-    do {//A Estrutura  do while foi aplicada na peça Bispo.
-        printf("Bispo - Cima_Esquerda\n",bispo);
-        bispo++;
-        }   while (bispo < 1);
-
-
-    while (rainha < 2) {// A Estrutura while foi aplicada na peça Rainha.
-        printf("Rainha - Esquerda\n");
-        rainha++;
-        }
-    
     return 0;
 }
