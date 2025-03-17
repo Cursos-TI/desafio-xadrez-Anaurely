@@ -4,8 +4,28 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void moverrainha(int casas){
+    if (casas > 0){
+        printf("Esquerda\n");// Imprime o valor atual.
+        moverrainha(casas -1);// Chama a si mesma .
+    }
+    }
+void movertorre(int casas){
+    if (casas > 0){
+        printf("Direita\n");// Imprime o valor atual.
+        movertorre(casas -1);// Chama a si mesma .
+        }
+        }
+void moverbispo(int casas){
+    if (casas > 0){
+        printf("Direita_Cima\n");// Imprime o valor atual.
+        moverbispo(casas -1);// Chama a si mesma .
+            }
+            }
+
 int main() {
-    int torre;
+    //Variaveis
+    int torre; 
     int bispo;
     int rainha;
     int cavalo;
@@ -26,30 +46,20 @@ int main() {
         case 'B':
         case 'b':
             printf("Você escolheu o bispo\n");
-            for (bispo = 1; bispo <= 4; bispo++) {
-                printf("%d Cima_direita\n", bispo);
-            }
+            moverbispo(5);// Chamada do procedimento
             break;
 
         case 'T':
         case 't':
             printf("Você escolheu a torre\n");
-            torre = 1; // Inicializando a variável torre
-            while (torre <= 4) {
-                printf("%d Esquerda\n", torre);
-                torre++;
-            }
+            movertorre(5);// Chamada do procedimento
+
             break;
 
         case 'R':
         case 'r':
             printf("Você escolheu a rainha\n");
-            rainha = 1;
-            do
-            {printf("%d Direita\n", rainha);
-            rainha++;
-            } while (rainha <= 3);
-            
+            moverrainha(8);// Chamada do procedimento
             
             break;
 
@@ -57,14 +67,14 @@ int main() {
         case 'c':
             printf("Você escolheu o cavalo\n");
             cavalo = 1;
-            for (cavalo = 1; cavalo <= 3; cavalo++)
+            for (cavalo = 1; cavalo <= 3; cavalo++)// Loop Externo.
             {
-                while(cavalo <= 2){
-                    printf("%d baixo\n",cavalo);
-                    ++cavalo;
+                while(cavalo <= 2){// Loop interno.
+                    printf("Baixo\n",cavalo);
+                    cavalo++;
                 }
                 
-                    printf("%d esquerda\n", cavalo);
+                    printf("Direita\n", cavalo);
             }         
                        
             break;
