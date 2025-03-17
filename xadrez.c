@@ -8,6 +8,7 @@ int main() {
     int torre;
     int bispo;
     int rainha;
+    int cavalo;
     char opcao; 
     
 
@@ -16,16 +17,17 @@ int main() {
     printf("T = torre\n");
     printf("B = bispo\n");
     printf("R = rainha\n");
+    printf("C = cavalo\n");
 
-    printf("Escolha sua peça (T/B/R): \n");
+    printf("Escolha sua peça (T/B/R/C): \n");
     scanf(" %c", &opcao); //Ler um caractere
 
     switch (opcao) {
         case 'B':
         case 'b':
             printf("Você escolheu o bispo\n");
-            for (bispo = 1; bispo <= 3; bispo++) {
-                printf("Bispo %d Cima_direita\n", bispo);
+            for (bispo = 1; bispo <= 4; bispo++) {
+                printf("%d Cima_direita\n", bispo);
             }
             break;
 
@@ -33,8 +35,8 @@ int main() {
         case 't':
             printf("Você escolheu a torre\n");
             torre = 1; // Inicializando a variável torre
-            while (torre <= 3) {
-                printf("Torre %d Esquerda\n", torre);
+            while (torre <= 4) {
+                printf("%d Esquerda\n", torre);
                 torre++;
             }
             break;
@@ -44,11 +46,27 @@ int main() {
             printf("Você escolheu a rainha\n");
             rainha = 1;
             do
-            {printf("Rainha %d Direita\n", rainha);
+            {printf("%d Direita\n", rainha);
             rainha++;
             } while (rainha <= 3);
             
             
+            break;
+
+        case 'C':
+        case 'c':
+            printf("Você escolheu o cavalo\n");
+            cavalo = 1;
+            for (cavalo = 1; cavalo <= 3; cavalo++)
+            {
+                while(cavalo <= 2){
+                    printf("%d baixo\n",cavalo);
+                    ++cavalo;
+                }
+                
+                    printf("%d esquerda\n", cavalo);
+            }         
+                       
             break;
 
         default:
